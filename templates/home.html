@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/main.js' %}"></script>
+</head>
+<body>
+    <img src="{% static 'images/download.jpg' %}">
+    <h1>Hello Everyone</h1>
+    <p>{{name}}</p>
+    <p>{{age}}</p>
+    <p>{{x}}</p>
+    <p>{{list}}</p>
+
+
+    {% if x > y%}
+    <p>{{x}} is greater</p>
+    {% else %}
+    <p>{{y}} is greater</p>
+    {% endif %}
+
+    {% for i in list %}
+    {{i}}
+    {% endfor %}
+
+    {{products}}
+
+    {{greet}}
+    <br>
+
+    {% for p in products %}
+    {{p.name}}<br>
+    {{p}}<br><hr>
+    {% endfor %}
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+        </tr>
+        {% for p in products %}
+        <tr>
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.cat}}</td>
+            <td>{{p.price}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
